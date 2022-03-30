@@ -1,0 +1,56 @@
+
+body {
+    background-image: url(Daco_4274852.png) !important;
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#hstudy {
+    color: #93c47d;
+    box-shadow: 0 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#hreacer {
+    color:#ea9999;
+    box-shadow: 0 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#submitbutton {
+    background-color: #93c47d;
+}
+
+#resultpercentage {
+    color: #ea9999;
+    font-size: 20px;
+}
+
+#resultpercentage60 {
+    color: #ffcd00ff;
+    font-size: 20px;
+}
+
+#resultpercentage90 {
+    color: #93c47d;
+    font-size: 20px;
+}
+
+#racemessage {
+    font-size: 25px;
+}
+
+#racingflags {
+    width: 300px;
+}
+
+#resultbg {
+    background-color: rgba(255, 255, 255, 0.233);
+}
+
+#titlelink {
+    padding: 3px 100px;
+}

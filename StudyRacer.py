@@ -42,5 +42,10 @@ def static_files(filename):
 
     return static_file(filename, root="static")
 
+@route('/scripts/<filename>')
+def script_files(filename):
+
+    return static_file(filename, root="scripts")
+
 
 run(host="127.0.0.1", port=8080, reloader=True, debug=True)

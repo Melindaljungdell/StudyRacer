@@ -34,7 +34,12 @@ def race_text_to_list():
     print("antal rätt", matches)
     print("textens längd", lenRaceText)
     print("procent", result)
+        
+    lastWord = raceTextAsList[-1]
+    lastInput = userInputAsList[-1]
     
+    print(lastWord, lastInput)
+
     return template("result", userResult=result)
 
 @route('/static/<filename>')

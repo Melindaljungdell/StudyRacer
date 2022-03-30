@@ -7,12 +7,26 @@ var appendMiliSec = document.getElementById("miliSec");
 var pressToStart = document.getElementById("input");
 let int = null;
 
+var totalTime = (min / 60) + sec;
+
+
 document.getElementById('input').addEventListener('keydown', ()=>{
     if(int!==null){
         clearInterval(int);
     }
     int = setInterval(startTimer,10);
 });
+
+document.getElementById('timer').addEventListener('click', ()=>{
+    clearInterval(int);
+});
+
+
+function totaltime(){
+
+	totalTime.innerHTML = "(min /"
+
+};
 
 function startTimer(){
 
@@ -27,10 +41,10 @@ function startTimer(){
 	}
 
 	if (miliSec > 99){
-		sec ++; 
+		sec ++;
 		appendSec.innerHTML = "0" + sec;
 		miliSec = 0;
-		appendMiliSec.innerHTML = "0" + 0; 
+		appendMiliSec.innerHTML = "0" + 0;
 	}
 
 	if (sec < 9){

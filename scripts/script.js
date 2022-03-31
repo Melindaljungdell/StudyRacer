@@ -7,8 +7,7 @@ var appendMiliSec = document.getElementById("miliSec");
 var pressToStart = document.getElementById("input");
 let int = null;
 
-var totalTime = (min / 60) + sec;
-
+var totalTime = (min * 60) + sec;
 
 document.getElementById('input').addEventListener('keydown', ()=>{
     if(int!==null){
@@ -17,8 +16,12 @@ document.getElementById('input').addEventListener('keydown', ()=>{
     int = setInterval(startTimer,10);
 });
 
-document.getElementById('timer').addEventListener('click', ()=>{
-    clearInterval(int);
+document.getElementById('input').addEventListener('keydown', (e)=>{
+	if(e.key === "Escape"){
+        clearInterval(int);
+
+		//spara till json och skicka till python, ajax?
+	}
 });
 
 

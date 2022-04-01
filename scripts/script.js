@@ -1,14 +1,17 @@
 var miliSec = 00;
 var sec = 00;
 var min = 00;
+// Sparar tid i olika variabler
 var appendMin = document.getElementById("min");
 var appendSec = document.getElementById("sec");
 var appendMiliSec = document.getElementById("miliSec");
 var pressToStart = document.getElementById("input");
+// Hämtar vilka IDs som ska påverkas i HTML
 let int = null;
 
-var totalTime = (min * 60) + sec;
+// var totalTime = (min * 60) + sec;
 
+//Om användaren trycker på någon tangent startar timern
 document.getElementById('input').addEventListener('keydown', ()=>{
     if(int!==null){
         clearInterval(int);
@@ -16,6 +19,7 @@ document.getElementById('input').addEventListener('keydown', ()=>{
     int = setInterval(startTimer,10);
 });
 
+// Om användaren trycker på "Escape" så pausas timern
 document.getElementById('input').addEventListener('keydown', (e)=>{
 	if(e.key === "Escape"){
         clearInterval(int);
@@ -24,13 +28,14 @@ document.getElementById('input').addEventListener('keydown', (e)=>{
 	}
 });
 
-
 function totaltime(){
 
 	totalTime.innerHTML = "(min /"
 
 };
 
+
+// Funktion som räknar tid och ökar värden vid angivna gränser
 function startTimer(){
 
 	miliSec ++;

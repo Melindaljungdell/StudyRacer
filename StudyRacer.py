@@ -24,7 +24,7 @@ def race_random_line():
 @route("/result/", method="POST")
 def race_text_to_list():
 
-    '''beräknar användarens resultat i accuracy%'''
+    '''gör om texten till en lista och beräknar användarens resultat i accuracy%'''
 
     raceText = getattr(request.forms, "raceText")
     userInput = getattr(request.forms, "userRaceInput")

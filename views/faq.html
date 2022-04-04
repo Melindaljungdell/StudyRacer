@@ -24,8 +24,8 @@
                 
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li><a href="/" class="nav-link px-2 text-warning">Home</a></li>
-                            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                            <li><a href="#" class="nav-link px-2 text-white">About us</a></li>
+                            <li><a href="/faq/" class="nav-link px-2 text-white">FAQs</a></li>
+                            <li><a href="/about/" class="nav-link px-2 text-white">About us</a></li>
                         </ul>
 
                         <div class="col text-center">
@@ -47,36 +47,50 @@
 
             <div id="resultbg" class="container py-3 mt-5 col-md-9 col-lg-7 col-xl-6 rounded shadow-lg">
                 <div class="row justify-content-center">
-                    <div class="container">
-                        <form action="/result/" method="POST">    
-                            <div class="row">
-                                <div class="">
-                                    <textarea id="text" class="form-control text-start p-2 shadow-lg" rows="5" name="raceText" aria-label="Disabled input example" spellcheck="false" readonly>{{textFile}}</textarea>
-                                </div>
-                                <div>
-                                    <textarea id="input" class="form-control mt-4 p-2 shadow-lg" rows="5" name="userRaceInput" placeholder="Type here..." spellcheck="false"></textarea>
-                                </div>
-                            </div>
-                            <div id="timer">                            
-                                <p><span id="min">00</span>:<span id="sec">00</span>:<span id="miliSec">00</span></p>
-                            </div>
+                    <div class="text-white">
 
-                            <div class="d-flex justify-content-end">
-                                <input type="submit" id="submitbutton" class="btn btn-dark text-black mt-3" value="Submit" href="/result">
-                            </div>
-                        </form>
+                        <h3 class="">FAQ:</h3>
+
+						<h4>Vad går StudyRacer ut på?</h4>
+                        <p>StudyRacer går ut på att skriva av texten i rutan på så kort tid och med så få misstag 
+							som möjligt, samtidigt som du lär dig innehållet i texten!</p>
+
+						<h4>Hur använder jag StudyRacer?</h4>
+						<p>Du kan använda StudyRacer på två olika sätt, antingen genom att racea en befintlig
+							text, eller ange en egen text som du vill racea, men det finns en maxgräns på antalet 
+							karaktärer texten kan vara (ANGE SIFFRA HÄR). Efter att du har skrivit klart det
+							sista ordet i texten så kommer racet anses som färdigt. Då kommer du till en skärm
+							som presenterar ditt resultat för dig, och ge tips och tricks för hur du kan bli 
+							snabbare på att skriva! 
+						</p>
+
+						<h4>Behöver jag ha ett konto för att kunna delta?</h4>
+						<p>Nej, det krävs inte ett användarkonto för att använda sig av webbapplikationen.
+							Det underlättar dock för användaren om man skapar ett sådant då det finns många 
+							fina fördelar med att ha ett konto.</p>
+
+						<h4>Vilka fördelar finns med att ha ett konto på er webbplats?</h4>
+						<p> Fördelarna är att användaren kan följa sin statistik för att se hur ens utveckling går, 
+							få en topplista med sina bästa resultat genoom tiderna. 
+							och se hur man i genomsnitt presterar.</p>
+
+						<h4>Kan jag racea utan en egen text bara för att bli snabbare?</h4>
+						<p>Självklart! Har man inte något material man vill skriva av så finns det en 
+							uppsättning av olika texter om man bara vill bli bättre på att skriva.</p>
+
+						<p>Lycka till!</p>
+
+                        <div class="d-flex justify-content-start">
+                            <a id="submitbutton" class="btn btn-dark text-black mt-1" href="/racepage/">Starta race</a>                 
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-
-
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/scripts/script.js"></script>
+        <script src="/scripts/script.js"></script>
     </body>
 
 </html>

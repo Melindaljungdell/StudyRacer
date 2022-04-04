@@ -31,22 +31,22 @@ def race_text_to_list():
     raceTextAsList = raceText.split(" ")
     userInputAsList = userInput.split(" ")
 
+    lastWord = raceTextAsList[-1]
+    lastInput = userInputAsList[-1]
+
+
     matches = sum(a == b for a, b in zip(raceTextAsList, userInputAsList))
     lenRaceText=len(raceTextAsList)
     result = int(matches / lenRaceText * 100)
-
-    iMatches = int(matches)
 
     print("antal rätt", matches)
     print("textens längd", lenRaceText)
     print("procent", result)
 
-    lastWord = raceTextAsList[-1]
-    lastInput = userInputAsList[-1]
     
     print(lastWord, lastInput)
 
-    return template("result", userResult=result, userMatches=iMatches)
+    return template("result", userResult=result, userMatches=matches, textLength=lenRaceText)
 
 @route('/static/<filename>')
 def static_files(filename):

@@ -35,6 +35,8 @@ def race_text_to_list():
     lenRaceText=len(raceTextAsList)
     result = int(matches / lenRaceText * 100)
 
+    iMatches = int(matches)
+
     print("antal rätt", matches)
     print("textens längd", lenRaceText)
     print("procent", result)
@@ -44,7 +46,7 @@ def race_text_to_list():
     
     print(lastWord, lastInput)
 
-    return template("result", userResult=result)
+    return template("result", userResult=result, userMatches=iMatches)
 
 @route('/static/<filename>')
 def static_files(filename):

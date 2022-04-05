@@ -9,17 +9,36 @@ def index():
 
     return template("index")
 
-@route("/racepage/")
-def race_random_line():
-    '''låter användaren racea en slumpmässig text från JSON filen'''
-
-    with open("articles/dinosaur1.json") as myFile:
-        content = json.loads(myFile.read())
-    line = choice(content)
+@route("/racepage/<text>")
+def race(text):
+    if text!= "dinosaur1":
+        my_file=open(f"articles/{text}.json", "r")
+        textToRace=my_file.read()
+        TTR=json.loads(textToRace)
+        my_file.close()
     
-    myFile.close()
+    else:    
+        with open("articles/dinosaur1.json") as myFile:
+            content = json.loads(myFile.read())
+        TTR = choice(content)
+        myFile.close()
 
-    return template("racepage", textFile=line)
+    return template("racepage", textFile=TTR)
+
+@route("/racetext/")
+def make_text_to_race ():
+    
+    return template("racetext")
+
+@route("/racetext/save", method="POST")
+def save_racetext (): 
+    raceText = str(request.forms.get("userRaceText"))
+
+    my_file=open("articles/usertext.json", "w")
+    my_file.write(json.dumps(raceText))
+    my_file.close()
+
+    redirect("/racepage/usertext")
 
 @route("/result/", method="POST")
 def race_text_to_list():

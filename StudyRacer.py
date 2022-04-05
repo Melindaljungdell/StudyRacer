@@ -3,9 +3,11 @@ from random import choice
 import json
 
 
+
 @route("/")
 def index():
     '''Returnerar templaten index'''
+
 
     return template("index")
 

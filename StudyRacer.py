@@ -8,7 +8,6 @@ import json
 def index():
     '''Returnerar templaten index'''
 
-
     return template("index")
 
 @route("/faq/")
@@ -26,6 +25,8 @@ def about():
 
 @route("/racepage/<text>")
 def race(text):
+    '''Returnerar template racepage med en förinlagd text eller med användarens egen'''
+
     if text!= "dinosaur1":
         my_file=open(f"articles/{text}.json", "r")
         textToRace=my_file.read()
@@ -42,11 +43,14 @@ def race(text):
 
 @route("/racetext/")
 def make_text_to_race ():
+    '''Returenerar template racetext och låter användaren lägga in en egen text'''
     
     return template("racetext")
 
 @route("/racetext/save", method="POST")
 def save_racetext (): 
+    '''sparar användarens egna text i usertext.json, skickar sedan användaren till racepage'''
+
     raceText = str(request.forms.get("userRaceText"))
 
     my_file=open("articles/usertext.json", "w")
@@ -57,7 +61,6 @@ def save_racetext ():
 
 @route("/result/", method="POST")
 def race_text_to_list():
-
     '''gör om texten till en lista och beräknar användarens resultat i accuracy%'''
 
     raceText = getattr(request.forms, "raceText")

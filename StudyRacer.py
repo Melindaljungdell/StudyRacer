@@ -3,6 +3,7 @@ from random import choice
 import json
 
 
+
 @route("/")
 def index():
     '''Returnerar templaten index'''
@@ -38,21 +39,44 @@ def reg():
 
 
 
-@route("/racepage/")
-def race_random_line():
-    '''låter användaren racea en slumpmässig text från JSON filen'''
+@route("/racepage/<text>")
+def race(text):
+    '''Returnerar template racepage med en förinlagd text eller med användarens egen'''
 
-    with open("articles/dinosaur1.json") as myFile:
-        content = json.loads(myFile.read())
-    line = choice(content)
+    if text!= "dinosaur1":
+        my_file=open(f"articles/{text}.json", "r")
+        textToRace=my_file.read()
+        TTR=json.loads(textToRace)
+        my_file.close()
     
-    myFile.close()
+    else:    
+        with open("articles/dinosaur1.json") as myFile:
+            content = json.loads(myFile.read())
+        TTR = choice(content)
+        myFile.close()
 
-    return template("racepage", textFile=line)
+    return template("racepage", textFile=TTR)
+
+@route("/racetext/")
+def make_text_to_race ():
+    '''Returenerar template racetext och låter användaren lägga in en egen text'''
+    
+    return template("racetext")
+
+@route("/racetext/save", method="POST")
+def save_racetext (): 
+    '''sparar användarens egna text i usertext.json, skickar sedan användaren till racepage'''
+
+    raceText = str(request.forms.get("userRaceText"))
+
+    my_file=open("articles/usertext.json", "w")
+    my_file.write(json.dumps(raceText))
+    my_file.close()
+
+    redirect("/racepage/usertext")
 
 @route("/result/", method="POST")
 def race_text_to_list():
-
     '''gör om texten till en lista och beräknar användarens resultat i accuracy%'''
 
     raceText = getattr(request.forms, "raceText")

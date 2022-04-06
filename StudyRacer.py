@@ -21,6 +21,22 @@ def about():
 
     return template("about")
 
+@route("/views/reg.html")
+def reg():
+    '''Returnerar templaten Reg'''
+
+
+    return template("reg")
+
+@route("/views/login.html")
+def reg():
+    '''Returnerar templaten login'''
+
+
+    return template("login")
+
+
+
 
 @route("/racepage/")
 def race_random_line():

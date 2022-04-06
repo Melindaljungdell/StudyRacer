@@ -9,6 +9,19 @@ def index():
 
     return template("index")
 
+@route("/faq/")
+def faq():
+    '''Returnerar templaten faq'''
+
+    return template("faq")
+
+@route("/about/")
+def about():
+    '''Returnerar templaten about'''
+
+    return template("about")
+
+
 @route("/racepage/")
 def race_random_line():
     '''låter användaren racea en slumpmässig text från JSON filen'''

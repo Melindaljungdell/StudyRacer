@@ -24,8 +24,8 @@
                 
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li><a href="/" class="nav-link px-2 text-warning">Home</a></li>
-                            <li><a href="/faq/" class="nav-link px-2 text-white">FAQs</a></li>
-                            <li><a href="/about/" class="nav-link px-2 text-white">About us</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                         </ul>
 
                         <div class="col text-center">
@@ -49,22 +49,22 @@
                 <div class="row justify-content-center">
                     <div class="text-white">
 
-                        <h2 class="">Welcome!</h2>
-                        
-                        <p>StudyRacer is a tool designed for learning and getting fast at typing. Write the text as fast as possible, and with as few mistakes as possible.</p>
-                        <p>Good luck!</p>
-
-                        <div class="d-flex justify-content-start">
-                            <a id="submitbutton" class="btn btn-dark text-black mt-1" href="/racepage/dinosaur1">Starta race med slumpad text</a> 
-                            <a id="submitbutton" class="btn btn-dark text-black mt-1 mx-1" href="/racetext/">Lägg in egen text</a>     
-                        </div>
+                        <h2 class="">Lägg in text</h2>
+                        <form action="/racetext/save" method="POST">
+                            <div>
+                                <textarea id="input" class="form-control mt-4 p-2 shadow-lg" rows="15" maxlength = "3500" name="userRaceText" placeholder="max 3500 tecken" spellcheck="false"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-start">
+                                <input type="submit" id="submitbutton" class="btn btn-dark text-black mt-3" value="Submit">                    
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="/scripts/indexscript.js"></script>
+        <script src="/scripts/script.js"></script>
     </body>
 
 </html>

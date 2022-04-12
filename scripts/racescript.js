@@ -170,7 +170,6 @@ function start_timer(){
 //	document.getElementById("resultwpm").innerHTML = undefined;
 //}
 
-<<<<<<< Updated upstream
 // Check if last word is equal to the last word of the text and the amount of words are the same, 
 // if it is, submit the text. 
 messageEle.addEventListener('input', function (e) {
@@ -207,23 +206,3 @@ messageEle.addEventListener('input', function (e) {
 
 // If user input is correct, mark the letter green, if incorrect, mark the letter red
 function mark_letters(){
-
-=======
-// Check if last word is equal to the last word of the text, if it is, submit the text. 
-const raceText = document.getElementById("text").value;
-console.log("Text att skriva av: " + raceText);
-const raceTextArray = raceText.split(" ");
-
-const raceTextArrayLastItem = raceTextArray.pop();
-
-console.log (raceTextArrayLastItem);
-
-const writtenText = document.getElementById("input").value;
-console.log(writtenText)
-const writtenTextArray = writtenText.split(" ");
-const writtenTextLastItem = writtenTextArray.pop();
-
-if (raceTextArrayLastItem === writtenTextLastItem) {
-	document.forms["myForm"].submit();
->>>>>>> Stashed changes
-}

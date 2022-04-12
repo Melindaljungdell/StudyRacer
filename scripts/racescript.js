@@ -99,8 +99,7 @@ messageEle.addEventListener('input', function (e) {
 function countWords() {
 
 	// Get the input text value
-	var text = document
-		.getElementById("input").value;
+	let inputText = document.getElementById("input").value;
 
 	// Initialize the word counter
 	var numWords = 0;
@@ -170,3 +169,40 @@ function start_timer(){
 //function clear_wpm() {
 //	document.getElementById("resultwpm").innerHTML = undefined;
 //}
+
+// Check if last word is equal to the last word of the text and the amount of words are the same, 
+// if it is, submit the text. 
+messageEle.addEventListener('input', function (e) {
+	console.log("din text: " + messageEle.value)
+	// Split the written text into an array, space makes new arrayitem
+	let writtenTextArray = messageEle.value.split(" ")
+	// Check the last word of the array
+	let writtenTextLastWord = writtenTextArray.pop();
+	// count the amount of arrayitems
+	const writtenTextLength = writtenTextArray.length;
+
+	console.log(writtenTextArray)
+	console.log(writtenTextLastWord)
+	console.log("length input: " + writtenTextLength)
+
+	// get the text the user is supposed to race
+	const raceText = document.getElementById("text").value
+	// Split the text into an array
+	const raceTextArray = raceText.split(" ");
+	// Check the last word of the array
+	const raceTextLastWord = raceTextArray.pop();
+	// Count the amount of arrayitems
+	const raceTextLength = raceTextArray.length;
+	console.log(raceTextArray);
+	console.log (raceTextLastWord);
+	console.log("length text: " + raceTextLength)
+
+	// Checks if the last written word is equal to the last word of the race, and if the number of arrayitems are
+	// the same, if this is the case, finish the race.
+	if (writtenTextLastWord === raceTextLastWord && writtenTextLength === raceTextLength) {
+		document.forms["myForm"].submit();
+	}
+}); 
+
+// If user input is correct, mark the letter green, if incorrect, mark the letter red
+function mark_letters(){
